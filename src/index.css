@@ -10,3 +10,42 @@ body {
 main {
   flex-grow: 1;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  height: 100%;
+}
+
+.card-box {
+  position: relative;
+  flex-basis: fit-content;
+}
+
+.card-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

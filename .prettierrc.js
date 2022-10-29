@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('prettier-config-it-incubator'),
   printWidth: 120,
+  semi: false,
   //override settings here
-}
+};

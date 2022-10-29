@@ -8,7 +8,8 @@ export const GoodItem = (props) => {
     name,
     description,
     price,
-    image
+    image,
+    addGood
   } = props
 
   return (
@@ -33,7 +34,7 @@ export const GoodItem = (props) => {
           <Typography gutterBottom variant="body1" component="div" sx={{flexGrow: '1'}}>
             {price} ₽
           </Typography>
-          <Button size="small" variant="contained">Buy</Button>
+          <Button onClick={() => {addGood(id)}} size="small" variant="contained">Buy</Button>
         </CardContent>
       </Card>
     </li>

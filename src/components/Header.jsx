@@ -1,16 +1,15 @@
 import React from 'react'
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import { Cart } from './Cart'
 
 
 export const Header = () => {
   return (
     <header>
       <AppBar position="static">
-        <Toolbar variant="dense">
+        <Toolbar variant="dense" sx={{justifyContent: "space-between"}}>
           <Typography variant="h6" color="inherit" component="div">
             E-commerce app
           </Typography>

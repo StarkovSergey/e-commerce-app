@@ -17,6 +17,21 @@ ul {
   padding: 0;
 }
 
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container--header {
+  justify-content: start;
+}
+
+.container--cart {
+  display: flex;
+  justify-content: end;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -51,9 +66,11 @@ ul {
 }
 
 .cart {
+  justify-self: end;
+  margin-right: 10px;
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  margin-left: auto;
 
   z-index: 5;
   background-color: #ffca28;
@@ -63,7 +80,46 @@ ul {
 @media (min-width: 600px) {
   .cart {
     top: 5px;
-    right: 2rem;
     bottom: auto;
+  }
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  padding: 15px;
+}
+
+.modal-close-button {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  z-index: 6;
+}
+
+.stack {
+  position: fixed;
+  z-index: 10;
+  left: 10px;
+  bottom: 10px;
+  min-height: 50px;
+  max-width: 500px;
+  animation: fade-in 200ms ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
   }
 }

@@ -4,10 +4,10 @@ import ShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Badge, styled } from '@mui/material'
 
 
-export const Cart = ({quantity = 0}) => {
+export const Cart = ({quantity = 0, handleCartShow}) => {
 
   return (
-    <div className="cart">
+    <div className="cart" onClick={handleCartShow}>
       <IconButton aria-label="cart">
         <StyledBadge badgeContent={quantity} color="warning" >
           <ShoppingCartIcon />

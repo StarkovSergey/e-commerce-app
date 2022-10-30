@@ -1,0 +1,12 @@
+.button-box {
+  margin-right: auto;
+
+  border: 1px solid #8bc34a;
+  border-radius: 4px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

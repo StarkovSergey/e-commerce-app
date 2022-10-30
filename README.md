@@ -6,4 +6,4 @@ Tools:
 - React
 - MUI
 
-I use fortniteapi for requests.
+I use fortniteAPI for requests.

@@ -1,7 +1,11 @@
 import { Alert } from '@mui/material'
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
+import { ShopContext } from '../context'
 
-export const AlertsStack = ({name = '', closeAlert = Function.prototype}) => {
+export const AlertsStack = () => {
+
+  const { closeAlert, alertName: name } = useContext(ShopContext)
+
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000)
 

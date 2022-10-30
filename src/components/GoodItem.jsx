@@ -1,6 +1,7 @@
-import React from 'react'
-import { Button, Card, CardActions, CardContent, CardMedia } from '@mui/material'
+import React, { useContext } from 'react'
+import { Button, Card, CardContent, CardMedia } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import { ShopContext } from '../context'
 
 export const GoodItem = (props) => {
   const {
@@ -9,8 +10,9 @@ export const GoodItem = (props) => {
     description,
     price,
     image,
-    addGood
   } = props
+
+  const { addItem } = useContext(ShopContext)
 
   return (
     <li sx={{maxWidth: 345}}>
@@ -34,7 +36,7 @@ export const GoodItem = (props) => {
           <Typography gutterBottom variant="body1" component="div" sx={{flexGrow: '1'}}>
             {price} ₽
           </Typography>
-          <Button onClick={() => {addGood(id)}} size="small" variant="contained">Buy</Button>
+          <Button onClick={() => {addItem(id)}} size="small" variant="contained">Buy</Button>
         </CardContent>
       </Card>
     </li>

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, List, Modal } from '@mui/material'
 import { CartItem } from './CartItem'
 import IconButton from '@mui/material/IconButton'
 import { Close } from '@mui/icons-material'
 import style from './Cart.module.css'
+import { ShopContext } from '../../context'
 
-export const CartList = ({ order = [], open, onClose, removeItem, changeQuantity }) => {
+export const CartList = () => {
+  const { order, handleCartClose: onClose, isCartShow: open } = useContext(ShopContext)
+
   const totalPrice = order.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
   }, 0)
@@ -19,7 +22,7 @@ export const CartList = ({ order = [], open, onClose, removeItem, changeQuantity
         {order.length ? (
           <List>
             {order.map((item) => {
-              return <CartItem key={item.id} {...item} removeItem={removeItem} changeQuantity={changeQuantity} />
+              return <CartItem key={item.id} {...item}  />
             })}
           </List>
         ) : (

@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import style from './Cart.module.css'
+import RemoveIcon from '@mui/icons-material/Remove'
+import AddIcon from '@mui/icons-material/Add'
+import { ShopContext } from '../../context'
 
-export const CartItem = ({ id, name, price, quantity, image, description, removeItem, changeQuantity }) => {
+export const CartItem = ({ id, name, price, quantity, image, description }) => {
+
+  const { removeItem, changeQuantity } = useContext(ShopContext)
+
   return (
     <ListItem
       secondaryAction={
@@ -21,10 +24,9 @@ export const CartItem = ({ id, name, price, quantity, image, description, remove
         </Avatar>
       </ListItemAvatar>
 
-
       <ListItemText primary={`${name} x ${quantity} (${quantity * price} ₽)`} secondary={description} />
 
-      <div>
+      <div style={{width: "68px", flexShrink: "0"}}>
         <IconButton size="small" onClick={() => changeQuantity(id, -1)}>
           <RemoveIcon />
         </IconButton>
@@ -32,7 +34,6 @@ export const CartItem = ({ id, name, price, quantity, image, description, remove
           <AddIcon />
         </IconButton>
       </div>
-
     </ListItem>
   )
 }
